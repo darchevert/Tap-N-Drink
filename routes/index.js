@@ -13,8 +13,9 @@ var myArray = [
 { id:9, value:false}
 ];
 
+
+
 router.get('/', function(req, res, next) {
-  
 
   function shuffle(arra1) {
       var ctr = arra1.length, temp, index;

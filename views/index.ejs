@@ -14,25 +14,38 @@
     <h1>TAP'N'DRINK</h1>
     <div class="container">
 
-        <div class="row">
-          <%for(var i=0; i<myArray.length; i++) {%>
+      <div class="row">
+        <%for(var i=0; i<myArray.length; i++) {%>
           <div class="col-4" onclick="changeColor(this, '#99C262')" data-value="<%=myArray[i].value %>">
             <%=i+1%>
           </div>
           <%}%>
-        </div>
+      </div>
+        <div id="div_button">
+        <button id="button" class="btn btn-primary" style="display:none;">Rejouer</button>
+      </div>
     </div>
   </div>
-  <script>function changeColor(div, colors) {
-      if (div.dataset.value=="true") {
-          //check is true, execute this code
-          div.style.backgroundColor = colors;
+  <script>
+    function changeColor(div, colors) {
+      if (div.dataset.value == "true") {
+
+        div.style.backgroundColor = colors;
+        document.getElementById("button").removeAttribute("style");
+        var newDiv = document.createElement("div");
+        var newContent = document.createTextNode("VICTORYYYYY !!!");
+        newDiv.appendChild(newContent);
+
+        var currentDiv = document.getElementById("div_button");
+        document.body.insertBefore(newDiv, currentDiv);
+
+
+      } else {
+        div.style.backgroundColor = "red";
 
       }
-      else {
-        div.style.backgroundColor = "red";
-      }
-  }</script>
+    }
+  </script>
   <script type="text/javascript" src="javascripts/script.js"></script>
 </body>
 
