@@ -36,5 +36,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { myArray });
 });
 
+router.get('/regles', function(req, res, next) {
+  res.render('regles');
+});
+
 
 module.exports = router;
