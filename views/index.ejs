@@ -27,12 +27,16 @@
     </div>
       <h2 id="resultat"></h2>
   </div>
-  <audio id="non" src="sound/non.mp3"></audio>
+  <audio id="non" src="sound/bidon.mp3"></audio>
+  <audio id="oui" src="sound/ouiii.mp3"></audio>
+  <audio id="playAgain" src="sound/luxe.mp3"></audio>
   <script>
   var resultats = ["Tu distribues 4 gorgées", "Tu distribues 3 gorgées", "Tu distribues 2 gorgées", "Tu distribues 1 gorgée", "Tu bois 1 gorgée", "Tu bois 2 gorgées", "Tu bois 3 gorgées", "Tu bois 4 gorgées", "Tu bois 5 gorgées"];
   var i=0;
   var bloque = false;
   var non = document.getElementById("non");
+  var oui = document.getElementById("oui");
+  var playAgain = document.getElementById("playAgain");
 
     function changeColor(div, colors, resultat) {
 
@@ -40,6 +44,7 @@
 
         } else {
           if (div.dataset.value=="true") {
+            oui.play();
             bloque=true;
               //check is true, execute this code
             div.style.backgroundColor = colors;
@@ -57,6 +62,7 @@
             // ajoute le nouvel élément créé et son contenu dans le DOM
             var currentDiv = document.getElementById("container");
             document.body.insertBefore(newH2, currentDiv);
+
 
           }
           else {
