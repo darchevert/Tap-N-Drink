@@ -2,48 +2,71 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
-
 <body>
   <div>
     <h1>TAP'N'DRINK</h1>
     <div class="container">
 
-      <div class="row">
-        <%for(var i=0; i<myArray.length; i++) {%>
+        <div class="row">
+          <%for(var i=0; i<myArray.length; i++) {%>
           <div class="col-4" onclick="changeColor(this, '#99C262')" data-value="<%=myArray[i].value %>">
             <%=i+1%>
           </div>
           <%}%>
-      </div>
+        </div>
         <div id="div_button">
         <button id="button" class="btn btn-primary" style="display:none;">Rejouer</button>
       </div>
     </div>
+      <h2 id="resultat"></h2>
   </div>
+  <audio id="non" src="sound/non.mp3"></audio>
   <script>
-    function changeColor(div, colors) {
-      if (div.dataset.value == "true") {
+  var resultats = ["Tu distribues 4 gorgées", "Tu distribues 3 gorgées", "Tu distribues 2 gorgées", "Tu distribues 1 gorgée", "Tu bois 1 gorgée", "Tu bois 2 gorgées", "Tu bois 3 gorgées", "Tu bois 4 gorgées", "Tu bois 5 gorgées"];
+  var i=0;
+  var bloque = false;
+  var non = document.getElementById("non");
 
-        div.style.backgroundColor = colors;
-        document.getElementById("button").removeAttribute("style");
-        var newDiv = document.createElement("div");
-        var newContent = document.createTextNode("VICTORYYYYY !!!");
-        newDiv.appendChild(newContent);
+    function changeColor(div, colors, resultat) {
 
-        var currentDiv = document.getElementById("div_button");
-        document.body.insertBefore(newDiv, currentDiv);
+        if (bloque) {
+
+        } else {
+          if (div.dataset.value=="true") {
+            bloque=true;
+              //check is true, execute this code
+            div.style.backgroundColor = colors;
+
+            var newH2 = document.createElement("h2");
+            var newBtn = document.createElement("button");
+            document.getElementById("button").removeAttribute("style");
+            // et lui donne un peu de contenu
+            var newContentH2 = document.createTextNode(resultats[i]);
+
+            // ajoute le noeud texte au nouveau div créé
+            newH2.appendChild(newContentH2);
 
 
-      } else {
-        div.style.backgroundColor = "red";
+            // ajoute le nouvel élément créé et son contenu dans le DOM
+            var currentDiv = document.getElementById("container");
+            document.body.insertBefore(newH2, currentDiv);
 
-      }
+          }
+          else {
+            div.style.backgroundColor = "red";
+            i++;
+            non.play();
+
+          }
+        }
+
     }
   </script>
   <script type="text/javascript" src="javascripts/script.js"></script>
