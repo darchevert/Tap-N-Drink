@@ -27,25 +27,37 @@
     <h2 id="resultat"></h2>
   </div>
   <div id="div_button">
-    <button id="button" class="btn btn-primary" style="display:none;">Rejouer</button>
+    <a href="#"><button id="button"class="btn btn-primary" onclick="playAgain()" style="display:none;">Rejouer</button></a>
   </div>
-  <audio id="non" src="sound/non.mp3"></audio>
+
+  <audio id="non" src="sound/bidon.mp3"></audio>
+  <audio id="oui" src="sound/ouiii.mp3"></audio>
+  <audio id="playAgain" src="sound/luxe.mp3"></audio>
 
   <script>
-    var resultats = ["Tu distribues 4 gorgées", "Tu distribues 3 gorgées", "Tu distribues 2 gorgées", "Tu distribues 1 gorgée", "Tu bois 1 gorgée", "Tu bois 2 gorgées", "Tu bois 3 gorgées", "Tu bois 4 gorgées", "Tu bois 5 gorgées"];
-    var i = 0;
-    var bloque = false;
-    var non = document.getElementById("non");
+  var resultats = ["Tu distribues 4 gorgées", "Tu distribues 3 gorgées", "Tu distribues 2 gorgées", "Tu distribues 1 gorgée", "Tu bois 1 gorgée", "Tu bois 2 gorgées", "Tu bois 3 gorgées", "Tu bois 4 gorgées", "Tu bois 5 gorgées"];
+  var i=0;
+  var bloque = false;
+  var non = document.getElementById("non");
+  var oui = document.getElementById("oui");
+  var playAgain = document.getElementById("playAgain");
+
+    function playAgain(){
+      console.log("BNOJOUROUEI");
+      playAgain.play();
+
+    }
 
     function changeColor(div, colors, resultat) {
 
       if (bloque) {
 
-      } else {
-        if (div.dataset.value == "true") {
-          bloque = true;
-          //check is true, execute this code
-          div.style.backgroundColor = colors;
+        } else {
+          if (div.dataset.value=="true") {
+            oui.play();
+            bloque=true;
+              //check is true, execute this code
+            div.style.backgroundColor = colors;
 
           var newH2 = document.createElement("h2");
           var newBtn = document.createElement("button");
@@ -61,10 +73,12 @@
           var currentDiv = document.getElementById("container");
           document.body.insertBefore(newH2, currentDiv);
 
-        } else {
-          div.style.backgroundColor = "red";
-          i++;
-          non.play();
+
+          }
+          else {
+            div.style.backgroundColor = "red";
+            i++;
+            non.play();
 
         }
       }
