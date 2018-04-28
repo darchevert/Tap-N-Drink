@@ -28,7 +28,8 @@
 
     </div>
     <h2 id="resultat"></h2>
-    <a href="/"><button id="button"class="btn btn-primary" onclick="luxe()" style="display:none;">Rejouer</button></a>
+    <a href="/"><button id="button"class="btn btn-primary" style="display:none;">Rejouer</button></a>
+    <button id="button_2"class="button_2 btn btn-primary" style="display:none;">FIESTA</button>
   </div>
 
 
@@ -47,20 +48,20 @@
 
 
     //WINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-    var links = document.getElementsByTagName('a'),
+    var links = document.getElementsByClassName('button_2'),
       linksLen = links.length;
-
+      console.log(links);
+      console.log(linksLen);
     for (var i = 0; i < linksLen; i++) {
 
       links[i].addEventListener('click', function(e) {
-        e.preventDefault();
         displayImg(e.currentTarget);
+          e.preventDefault();
       });
 
     }
 
     function displayImg(link) {
-
       var img = new Image(),
         overlay = document.getElementById('overlay');
 
@@ -74,7 +75,6 @@
       overlay.innerHTML = '<img src="images/dab.gif">';
       var mondotek = document.getElementById("mondotek");
       mondotek.play();
-
 
     }
 
@@ -97,6 +97,7 @@
           var newH2 = document.createElement("h2");
           var newBtn = document.createElement("button");
           document.getElementById("button").removeAttribute("style");
+          document.getElementById("button_2").removeAttribute("style");
           // et lui donne un peu de contenu
           var newContentH2 = document.createTextNode(resultats[i]);
 
