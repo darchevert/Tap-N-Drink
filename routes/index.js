@@ -14,7 +14,6 @@ var myArray = [
 ];
 
 
-
 router.get('/', function(req, res, next) {
 
   function shuffle(arra1) {
