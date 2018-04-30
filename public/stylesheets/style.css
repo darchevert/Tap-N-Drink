@@ -49,6 +49,10 @@ a {
   color : #212529;
 }
 
+button {
+  font-size : 30px;
+}
+
 
 #container {
   text-align: center;
