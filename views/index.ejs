@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <a href="/regles"><h3>Règles du jeu</h3></a>
+  <a href="/regles" class="right"><h3>Règles du jeu</h3></a>
   <div>
 
     <h1>TAP'N'DRINK</h1>
@@ -21,7 +21,7 @@
 
       <div class="row">
         <%for(var i=0; i<myArray.length; i++) {%>
-          <div class="col-4" onclick="changeColor(this, '#99C262')" data-value="<%=myArray[i].value %>">
+          <div class="col-4" onclick="changeColor(this, '#61bd6d')" data-value="<%=myArray[i].value %>">
             <%=i+1%>
           </div>
           <%}%>
@@ -98,6 +98,7 @@
 
       } else {
         if (div.dataset.value == "true") {
+          div.style.color = '#efefef';
           oui.play();
           bloque = true;
           //check is true, execute this code
@@ -121,7 +122,8 @@
 
 
         } else {
-          div.style.backgroundColor = "red";
+          div.style.backgroundColor = '#e14938';
+          div.style.color = '#efefef';
           i++;
           non.play();
 
