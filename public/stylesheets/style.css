@@ -2,12 +2,10 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #475577;
-  font-family: 'Titan One', cursive;
 }
 
 .col-4 {
-  border: 2px solid black;
-  border-radius: 30px;
+
   height: 220px;
   background-color: #e2e2e2;
 }
@@ -16,14 +14,19 @@ body {
   text-align: center;
   line-height:220px;
   font-size: 100px;
+}
 
+#case {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-  margin: 80px;
+  margin-top: 80px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 100px;
   color: #efefef;
+  font-family: 'Kaushan Script', cursive;
 }
 
 h2 {
@@ -31,29 +34,38 @@ h2 {
   font-size: 60px;
   margin: 80px;
   color: #efefef;
+  font-family: 'Kaushan Script', cursive;
 }
 
 h3 {
-  text-align: justify;
-  font-size: 40px;
-  margin-bottom: 80px;
-  margin-top: 0px;
+  text-align: right;
+  font-size: 50px;
+  margin-bottom: 100px;
+  margin-top: 10px;
   color: #efefef;
+  font-family: 'Kaushan Script', cursive;
 }
 
 h4 {
+  text-align: justify;
+  font-size: 50px;
+  margin-top: 200px;
+  color: #efefef;
+  font-family: 'Kaushan Script', cursive;
+  line-height:100px;
+}
+
+p {
   text-align: center;
   font-size: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   margin-top: 0px;
+  color: #efefef;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
   color : #212529;
-}
-
-button {
-  font-size : 30px;
 }
 
 
@@ -76,4 +88,50 @@ img{
     width: 100%; height: 100%;
     text-align: center;
     background-color: rgba(0,0,0,0.6);
+}
+
+.btn-sample {
+  color: #475577;
+  background-color: #FCFCFC;
+  border-color: #FFFFFF;
+}
+
+.btn-sample:hover,
+.btn-sample:focus,
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  color: #475577;
+  background-color: #6F00FF;
+  border-color: #FFFFFF;
+}
+
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  background-image: none;
+}
+
+.btn-sample.disabled,
+.btn-sample[disabled],
+fieldset[disabled] .btn-sample,
+.btn-sample.disabled:hover,
+.btn-sample[disabled]:hover,
+fieldset[disabled] .btn-sample:hover,
+.btn-sample.disabled:focus,
+.btn-sample[disabled]:focus,
+fieldset[disabled] .btn-sample:focus,
+.btn-sample.disabled:active,
+.btn-sample[disabled]:active,
+fieldset[disabled] .btn-sample:active,
+.btn-sample.disabled.active,
+.btn-sample[disabled].active,
+fieldset[disabled] .btn-sample.active {
+  background-color: #FCFCFC;
+  border-color: #FFFFFF;
+}
+
+.btn-sample .badge { 
+  color: #FCFCFC;
+  background-color: #475577;
 }
