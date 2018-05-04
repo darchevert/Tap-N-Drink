@@ -18,6 +18,9 @@ body {
 
 #case {
   font-family: 'Open Sans', sans-serif;
+  border: 4px solid;
+  border-color: #475577;
+  color: #475577;
 }
 
 h1 {
@@ -34,6 +37,7 @@ h1 {
   font-weight: bold;
   font-size: 50px;
   background-color: #e2e2e2;
+  color: #475577;
   border: 0px;
 }
 
